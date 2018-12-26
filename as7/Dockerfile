@@ -1,4 +1,4 @@
-FROM tifayuki/java:6
+FROM openjdk:7-jdk-alpine
 MAINTAINER Feng Honglin <hfeng@tutum.co>
 
 RUN apt-get update && \
