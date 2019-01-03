@@ -9,6 +9,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i 's/enable-welcome-root="true"/enable-welcome-root="false"/g' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml && \
+    sed -i 's/scan-interval="5000"/scan-interval="5000" deployment-timeout="300"/g' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml && \
     mkdir -p /jboss-as-7.1.1.Final/server/cpc/log/ebusiness
 
 RUN sed -i -r 's/jboss.bind.address.management:127.0.0.1/jboss.bind.address.management:0.0.0.0/' /jboss-as-7.1.1.Final/standalone/configuration/standalone.xml
